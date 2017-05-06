@@ -22,3 +22,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.square-item{
+  display: inline-block;
+  line-height: 100px;
+  text-align: center;
+  width: 100px;
+}
+
+.even {
+  background: linear-gradient(#ddd, #ccc);
+}

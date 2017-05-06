@@ -1,23 +1,27 @@
 import React from 'react'
 import ReactList from 'react-list';
-import { Article } from './Article';
+import {Article} from './Article';
 
 export class Articles extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.renderItem = this.renderItem.bind(this);
-        this.state={
-            length:100,
+        this.renderSquareItem = this.renderSquareItem.bind(this);
+        this.state = {
+            length: 100,
             mood: this.props.mood
         }
     }
 
-    renderItem(index, key) {
-        return <Article key={key} mood={this.state.mood}/>;
+    renderSquareItem(index, key) {
+
+        return ( <div key={key} className={'square-item' + (index % 2 ? '' : ' even')}>
+            {index}
+        </div>);
+
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         this.setState({mood: nextProps.mood});
     }
 
@@ -27,9 +31,9 @@ export class Articles extends React.Component {
                 <h1>{this.props.mood}</h1>
                 <div style={{overflow: 'auto', maxHeight: 400}}>
                     <ReactList
-                        itemRenderer={this.renderItem}
-                        length={100}
-                        type='uniform'
+                        length= {100}
+                        itemRenderer= {this.renderSquareItem}
+                        type= 'uniform'
                     />
                 </div>
             </div>
