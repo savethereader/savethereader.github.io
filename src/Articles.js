@@ -14,7 +14,6 @@ export class Articles extends React.Component {
     }
 
     componentWillMount() {
-        console.log(this.props);
         fetch('https://backend.gladsome17.hasura-app.io/articles/' + this.state.mood, {
             method: 'GET',
             headers: {
@@ -24,7 +23,10 @@ export class Articles extends React.Component {
             }
 
         }).then((responseText) => responseText.json())
-            .then((articles) => {console.log(articles);this.setState({articles:articles})});
+            .then((articles) => {
+                console.log(articles);
+                this.setState({articles: articles})
+            });
     }
 
 
@@ -39,17 +41,19 @@ export class Articles extends React.Component {
             }
 
         }).then((responseText) => responseText.json())
-            .then((articles) => {console.log(articles);this.setState({articles:articles})});
+            .then((articles) => {
+                console.log(articles);
+                this.setState({articles: articles})
+            });
     }
 
 
     render() {
         return (
             <div>
-                <h1>{this.props.mood}</h1>
                 <div className="App-content">
-                    {this.state.articles.map((article,index) =>{
-                       return <Article key={index} data={article}/>
+                    {this.state.articles.map((article, index) => {
+                        return <Article key={index} data={article}/>
                     })}
                 </div>
             </div>

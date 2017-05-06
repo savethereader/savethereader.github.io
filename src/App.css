@@ -1,71 +1,49 @@
-.App {
-    text-align: center;
-}
-
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
-}
-
-.App-header {
-    background-color: #222;
-    height: 150px;
-    padding: 20px;
-    color: white;
-}
-
-.App-intro {
-    font-size: large;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes App-logo-reverse-spin {
-    from {
-        transform: rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-.square-item {
-    display: inline-block;
-    line-height: 300px;
-    text-align: center;
-    max-width: 30%;
-    border: solid;
-}
-
 .img-container {
-    display: flex;
+    display: inline-flex;
+    width: 50%;
     justify-content: space-around;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    font-weight: bolder ;
+    font-size: x-large;
 }
 
-.sentiment {
-    height: 120px;
+.img-container a:hover {
+    cursor: pointer;
 }
 
-.happy{
-    animation: App-logo-spin infinite 20s linear;
+.Website-name{
+    margin-top: 8px;
+    margin-left: 20px;
 }
 
-.sad {
-    animation: App-logo-reverse-spin infinite 20s linear;
+.App{
+    display: block;
 }
-.even {
-    background: linear-gradient(#ddd, #ccc);
+
+.banner{
+    left: 0;
+    right: 0;
+    background: #444;
+    height: 50px;
 }
 
 .App-content{
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
+}
+
+.active {
+    color:#d6a153
+}
+
+.icon{
+    float: right;
+    font-family: 'Raleway', sans-serif;
+    color: #b4ff44;
+    font-weight: bolder ;
+    font-size: x-large;
+    padding: 10px;
 }

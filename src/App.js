@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Articles} from './Articles';
+import React, {Component} from "react";
+import "./App.css";
+import {Articles} from "./Articles";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.setMood = this.setMood.bind(this);
         this.state = {
-            show: false
+            show: false,
+            classname: ''
         }
     }
 
@@ -16,6 +16,13 @@ class App extends Component {
         this.setState({
             mood: ''
 
+        });
+    }
+
+    componentDidMount() {
+        this.setState({
+            mood: 'positive',
+            show: true
         });
     }
 
@@ -27,18 +34,20 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>PLACE HOLDER</h2>
+
+                <div className="banner">
+                    <div className="img-container">
+                        <a className={this.state.mood === "positive" ? "active" : ""} onClick={()=> this.setMood("positive")}>Happy</a>
+                        <a className={this.state.mood === "neutral" ? "active" : ""} onClick={()=> this.setMood("neutral")}>Neutral</a>
+                        <a className={this.state.mood === "negative" ? "active" : ""} onClick={()=> this.setMood("negative")}>Sad</a>
+
+                    </div>
+                    <div className="icon"> Save The Reader</div>
                 </div>
 
-                <p>What's your mood today?</p>
-                <div className="img-container">
-                    <img src="happy.png" className="sentiment happy" alt="logo" onClick={() => this.setMood("positive")}/>
-                    <img src="neutral.png" className="sentiment" alt="logo" onClick={() => this.setMood("neutral")}/>
-                    <img src="sad.png" className="sentiment sad" alt="logo" onClick={() => this.setMood("negative")}/>
+                <div>
+                    {this.state.show ? <Articles mood={this.state.mood}/> : null}
                 </div>
-                {this.state.show ? <Articles mood={this.state.mood}/> : null}
             </div>
 
         );
