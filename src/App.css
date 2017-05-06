@@ -1,35 +1,69 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
 }
 
 .App-intro {
-  font-size: large;
+    font-size: large;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.square-item{
-  display: inline-block;
-  line-height: 100px;
-  text-align: center;
-  width: 100px;
+@keyframes App-logo-reverse-spin {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
 }
 
+.square-item {
+    display: inline-block;
+    line-height: 300px;
+    text-align: center;
+    width: 30%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sentiment {
+    height: 120px;
+}
+
+.happy{
+    animation: App-logo-spin infinite 20s linear;
+}
+
+.sad {
+    animation: App-logo-reverse-spin infinite 20s linear;
+}
 .even {
-  background: linear-gradient(#ddd, #ccc);
+    background: linear-gradient(#ddd, #ccc);
+}
+
+.App-content{
+    overflow: auto;
+    max-height: 400px;
 }

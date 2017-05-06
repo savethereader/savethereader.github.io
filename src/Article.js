@@ -15,12 +15,12 @@ export class Article extends React.Component {
 
     render() {
         return (
-            <div>
-                <div> {this.state.mood}</div>
+            <div className={'square-item' + (this.props.index % 2 ? '' : ' even')}>
+                {/*<div> {this.state.mood}</div>*/}
                 <div>{this.props.key}</div>
                 <div>This is the title</div>
-                <div>This is the description</div>
-                <div>Link to the article here</div>
+                {/*<div>This is the description</div>*/}
+                Link to the article here
             </div>
         );
     }

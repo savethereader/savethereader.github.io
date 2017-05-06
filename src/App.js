@@ -24,7 +24,6 @@ class App extends Component {
     }
 
 
-
     render() {
         return (
             <div className="App">
@@ -34,11 +33,12 @@ class App extends Component {
                 </div>
 
                 <p>What's your mood today?</p>
-                <img src="happy.png" className="App-logo" alt="logo" onClick={()=> this.setMood("happy")}/>
-                <img src="neutral.png" className="App-logo" alt="logo" onClick={()=> this.setMood("neutral")}/>
-                <img src="sad.png" className="App-logo" alt="logo" onClick={()=> this.setMood("sad")}/>
-
-                {this.state.show?<Articles mood={this.state.mood}/>:null}
+                <div className="img-container">
+                    <img src="happy.png" className="sentiment happy" alt="logo" onClick={() => this.setMood("happy")}/>
+                    <img src="neutral.png" className="sentiment" alt="logo" onClick={() => this.setMood("neutral")}/>
+                    <img src="sad.png" className="sentiment sad" alt="logo" onClick={() => this.setMood("sad")}/>
+                </div>
+                {this.state.show ? <Articles mood={this.state.mood}/> : null}
 
             </div>
 

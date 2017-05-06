@@ -15,9 +15,7 @@ export class Articles extends React.Component {
 
     renderSquareItem(index, key) {
 
-        return ( <div key={key} className={'square-item' + (index % 2 ? '' : ' even')}>
-            {index}
-        </div>);
+        return ( <Article key={key} index={index}/>);
 
     }
 
@@ -29,7 +27,7 @@ export class Articles extends React.Component {
         return (
             <div>
                 <h1>{this.props.mood}</h1>
-                <div style={{overflow: 'auto', maxHeight: 400}}>
+                <div className="App-content">
                     <ReactList
                         length= {100}
                         itemRenderer= {this.renderSquareItem}
