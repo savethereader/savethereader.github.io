@@ -1,26 +1,26 @@
 import React from 'react'
 
 export class Article extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-            mood:this.props.mood
+        this.state = {
+            mood: this.props.mood,
+            data: this.props.data
         }
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({mood: nextProps.mood});
+    componentWillReceiveProps(nextProps) {
+        this.setState({mood: nextProps.mood, data: nextProps.data});
     }
 
 
     render() {
         return (
             <div className={'square-item' + (this.props.index % 2 ? '' : ' even')}>
-                {/*<div> {this.state.mood}</div>*/}
-                <div>{this.props.key}</div>
-                <div>This is the title</div>
-                {/*<div>This is the description</div>*/}
-                Link to the article here
+                {this.state.data.title}
+                {/*{this.state.data.description}*/}
+                <img src={this.state.data.image_url} alt={this.state.data.title}/>
+                <a href={this.state.data.url}>Read more...</a>
             </div>
         );
     }

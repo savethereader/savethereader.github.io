@@ -40,7 +40,8 @@
     display: inline-block;
     line-height: 300px;
     text-align: center;
-    width: 30%;
+    max-width: 30%;
+    border: solid;
 }
 
 .img-container {
