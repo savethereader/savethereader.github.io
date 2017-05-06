@@ -8,12 +8,17 @@ export class Articles extends React.Component {
         super(props);
         this.renderItem = this.renderItem.bind(this);
         this.state={
-            length:100
+            length:100,
+            mood: this.props.mood
         }
     }
 
     renderItem(index, key) {
-        return <Article key={key}/>;
+        return <Article key={key} mood={this.state.mood}/>;
+    }
+
+    componentWillReceiveProps(nextProps){
+        this.setState({mood: nextProps.mood});
     }
 
     render() {

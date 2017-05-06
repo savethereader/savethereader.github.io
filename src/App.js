@@ -7,8 +7,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.setMood = this.setMood.bind(this);
-        this.state={
-            show:false
+        this.state = {
+            show: false
         }
     }
 
